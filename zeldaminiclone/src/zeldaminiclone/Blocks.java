@@ -1,6 +1,8 @@
 package zeldaminiclone;
 
 import java.awt.Rectangle;
+import java.awt.Graphics;
+import java.awt.Color;
 
 public class Blocks extends Rectangle{
 
@@ -8,7 +10,10 @@ public class Blocks extends Rectangle{
 		super(x,y,32,32);
 	}
 	
-	public void render(){
-		
+	public void render(Graphics g){
+		g.setColor(Color.MAGENTA);
+		g.fillRect(x, y, width, height);
+		g.setColor(Color.black);
+		g.drawRect(x, y, width, height);
 	}
 }

@@ -14,12 +14,15 @@ public class Game extends Canvas implements Runnable, KeyListener{
 
 	public static int HEIGHT = 480, WIDTH = 480;
 	public Player player;
+
+	public World world;
 	
 	public Game() {
 		this.addKeyListener(this);
 		requestFocus();
 		this.setPreferredSize(new Dimension(WIDTH,HEIGHT));
 		player = new Player(100,100);
+		world = new World();
 	}
 	
 	public void tick() {
@@ -40,6 +43,8 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		player.render(g);
+
+		world.render(g);
 		
 		bs.show();
 	}
@@ -87,17 +92,17 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+		if(e.getKeyCode() == KeyEvent.VK_D) {
 			player.right = true;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+		else if(e.getKeyCode() == KeyEvent.VK_A) {
 			player.left = true;
 		}
 		
-		if(e.getKeyCode() == KeyEvent.VK_UP) {
+		if(e.getKeyCode() == KeyEvent.VK_W) {
 			player.up = true;
 		}
-		else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+		else if(e.getKeyCode() == KeyEvent.VK_S) {
 			player.down = true;
 		}
 	}
@@ -105,17 +110,18 @@ public class Game extends Canvas implements Runnable, KeyListener{
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getKeyCode() == 39) {
+		//System.out.println(e.getKeyCode());
+		if(e.getKeyCode() == 68) {
 			player.right = false;
 		}
-		else if(e.getKeyCode() == 37) {
+		else if(e.getKeyCode() == 65) {
 			player.left = false;
 		}
 		
-		if(e.getKeyCode() == 38) {
+		if(e.getKeyCode() == 87) {
 			player.up = false;
 		}
-		else if(e.getKeyCode() == 40) {
+		else if(e.getKeyCode() == 83) {
 			player.down = false;
 		}
 	}

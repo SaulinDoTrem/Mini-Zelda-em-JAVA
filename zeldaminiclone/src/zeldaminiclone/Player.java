@@ -24,8 +24,8 @@ public class Player extends Rectangle{
 		}else if(down) {
 			y+=spd;
 		}
-		System.out.println(x);
-		System.out.println(y);
+		//System.out.println(x);
+		//System.out.println(y);
 	}
 	
 	
