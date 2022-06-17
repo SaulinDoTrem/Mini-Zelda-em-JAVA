@@ -9,8 +9,7 @@ public class World {
     
     int alturaTela = Game.HEIGHT;
     int larguraTela = Game.WIDTH;
-    int ladoBloco = Blocks.LADO;
-
+    public static int ladoBloco = Blocks.LADO;
     public static List<Blocks> blocos = new ArrayList<Blocks>();
 
     public World() {
@@ -37,7 +36,7 @@ public class World {
     public static boolean isFree(int x, int y){
         for(int i = 0; i < blocos.size(); i++){
             Blocks blocoAtual = blocos.get(i);
-            if(blocoAtual.intersects(new Rectangle(x,y,32,32)))
+            if(blocoAtual.intersects(new Rectangle(x,y,ladoBloco,ladoBloco)))
                 return false;
         }
         return true;
