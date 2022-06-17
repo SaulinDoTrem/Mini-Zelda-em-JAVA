@@ -5,13 +5,11 @@ import java.awt.Graphics;
 
 public class FireBall extends Rectangle{
 
-    public int dir = 1;
-    public int speed = 8;
-
-    public int frames = 0;
+    public int dir = 1, speed = 8, frames = 0;
+    public static int LADO = 10;
 
     public FireBall(int x, int y, int dir){
-        super(x+16,y+16,10,10);
+        super(x+16,y+16,LADO,LADO);
         this.dir = dir;
     }
 

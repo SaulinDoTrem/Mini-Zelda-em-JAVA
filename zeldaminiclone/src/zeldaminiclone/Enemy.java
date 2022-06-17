@@ -8,23 +8,15 @@ import java.util.Random;
 
 public class Enemy extends Rectangle{
 	
-	public int spd = Player.spd/2;
-	
-	Player p = Game.player;
+	public int spd = Player.spd/2, hp = Player.hp/2;
 
-	public int right = 1,up = 0,down = 0,left = 0;
-
-	public int curAnimation = 0;
-
-	public int curFrames = 0, targetFrames = 15;
-
-	public int bulletsCooldown = 5;
+	public int right = 1,up = 0,down = 0,left = 0, curAnimation = 0, curFrames = 0, targetFrames = 15, bulletsCooldown = 5, dir;
 
 	public static List<FireBall> bullets = new ArrayList<FireBall>();
 
 	public boolean shoot = false;
 
-	public int dir = 1;
+	public Player p = Game.player;
 	
 	public Enemy(int x, int y) {
 		super(x,y,40,40);

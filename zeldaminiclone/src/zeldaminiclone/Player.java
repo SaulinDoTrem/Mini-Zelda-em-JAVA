@@ -7,16 +7,12 @@ import java.util.List;
 
 public class Player extends Rectangle{
 	
-	public static int spd = 4;
-	public boolean right,up,down,left;
+	public static int spd = 4, hp = 20;
+	public boolean right, up, down, left, shoot = false;
 
-	public int curAnimation = 0;
-
-	public int curFrames = 0, targetFrames = 15;
+	public int curAnimation = 0, curFrames = 0, targetFrames = 15;
 
 	public static List<FireBall> bullets = new ArrayList<FireBall>();
-
-	public boolean shoot = false;
 
 	public int dir = 1;
 	

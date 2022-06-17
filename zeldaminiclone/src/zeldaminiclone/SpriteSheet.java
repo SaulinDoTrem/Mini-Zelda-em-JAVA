@@ -7,10 +7,8 @@ import javax.imageio.ImageIO;
 
 public class SpriteSheet {
     
-    public static BufferedImage spritesheet;
-
     public static BufferedImage[] playerFront, enemyFront;
-    public static BufferedImage tileWall, fireBall;
+    public static BufferedImage tileWall, fireBall, spritesheet;
 
     public SpriteSheet() {
         try {
