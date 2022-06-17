@@ -12,6 +12,6 @@ public class Blocks extends Rectangle{
 	}
 	
 	public void render(Graphics g){
-		g.drawImage(SpriteSheet.tileWall, x, y, 32,32, null);
+		g.drawImage(SpriteSheet.tileWall, x, y, width,height, null);
 	}
 }

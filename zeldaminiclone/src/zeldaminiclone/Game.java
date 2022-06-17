@@ -100,6 +100,9 @@ public class Game extends Canvas implements Runnable, KeyListener{
 		else if(e.getKeyCode() == KeyEvent.VK_A) {
 			player.left = true;
 		}
+
+		if(e.getKeyCode() == KeyEvent.VK_F)
+			player.shoot = true;
 		
 		if(e.getKeyCode() == KeyEvent.VK_W) {
 			player.up = true;
