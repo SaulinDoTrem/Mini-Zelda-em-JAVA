@@ -2,18 +2,16 @@ package zeldaminiclone;
 
 import java.awt.Rectangle;
 import java.awt.Graphics;
-import java.awt.Color;
 
 public class Blocks extends Rectangle{
 
+	public static int LADO = 32;
+
 	public Blocks(int x, int y) {
-		super(x,y,32,32);
+		super(x,y,LADO,LADO);
 	}
 	
 	public void render(Graphics g){
-		g.setColor(Color.MAGENTA);
-		g.fillRect(x, y, width, height);
-		g.setColor(Color.black);
-		g.drawRect(x, y, width, height);
+		g.drawImage(SpriteSheet.tileWall, x, y, 32,32, null);
 	}
 }

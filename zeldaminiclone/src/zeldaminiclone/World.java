@@ -7,24 +7,30 @@ import java.awt.Rectangle;
 
 public class World {
     
-    int tamanhoTela = 480;
+    int alturaTela = Game.HEIGHT;
+    int larguraTela = Game.WIDTH;
+    int ladoBloco = Blocks.LADO;
 
     public static List<Blocks> blocos = new ArrayList<Blocks>();
 
     public World() {
-        for(int xx = 0; xx < 15; xx++){
-            blocos.add(new Blocks(xx*32, 0));
+        // blocos de cima
+        for(int xx = 0; xx < larguraTela/ladoBloco; xx++){
+            blocos.add(new Blocks(xx*ladoBloco, 0));
         }
-        for(int xx = 0; xx < 15; xx++){
-            blocos.add(new Blocks(xx*32, tamanhoTela - 32));
-        }
-
-        for(int xx = 0; xx < 15; xx++){
-            blocos.add(new Blocks(0, xx*32));
+        // blocos de baixo
+        for(int xx = 0; xx < larguraTela/ladoBloco; xx++){
+            blocos.add(new Blocks(xx*ladoBloco, alturaTela - ladoBloco));
         }
 
-        for(int xx = 0; xx < 15; xx++){
-            blocos.add(new Blocks(tamanhoTela - 32, xx*32));
+        // blocos da esquerda
+        for(int xx = 0; xx < alturaTela/ladoBloco; xx++){
+            blocos.add(new Blocks(0, xx*ladoBloco));
+        }
+
+        // blocos da direita
+        for(int xx = 0; xx < alturaTela/ladoBloco ; xx++){
+            blocos.add(new Blocks(larguraTela - ladoBloco, xx*ladoBloco));
         }
     }
 
