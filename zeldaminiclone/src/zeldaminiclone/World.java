@@ -31,6 +31,8 @@ public class World {
         for(int xx = 0; xx < alturaTela/ladoBloco ; xx++){
             blocos.add(new Blocks(larguraTela - ladoBloco, xx*ladoBloco));
         }
+
+        blocos.add(new Blocks(200,100));
     }
 
     public static boolean isFree(int x, int y){

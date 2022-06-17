@@ -20,6 +20,7 @@ public class FireBall extends Rectangle{
         frames++;
         if(frames == 60){
             Player.bullets.remove(this);
+            Enemy.bullets.remove(this);
             return;
         }
     }

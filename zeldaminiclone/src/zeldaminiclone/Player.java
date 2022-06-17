@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Player extends Rectangle{
 	
-	public int spd = 4;
+	public static int spd = 4;
 	public boolean right,up,down,left;
 
 	public int curAnimation = 0;
@@ -23,9 +23,8 @@ public class Player extends Rectangle{
 	public Player(int x, int y) {
 		super(x,y,40,40);
 	}
-	
-	public void tick() {
 
+	public boolean playerMovement(){
 		boolean moved = false;
 
 		if(right && World.isFree(x+spd, y)) {
@@ -45,6 +44,13 @@ public class Player extends Rectangle{
 			y+=spd;
 			moved = true;
 		}
+
+		return moved;
+	}
+	
+	public void tick() {
+
+		boolean moved = playerMovement();
 
 		if(shoot){
 			shoot = false;
